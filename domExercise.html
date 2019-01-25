@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dom Exercise</title>
+    <style type="text/css">
+        .big {
+            font-size: 100px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>I am and h1!</h1>
+    <p class="special" id="first">Hello</p>    
+    <p class="special">Goobye!</p>
+    <p>Hi Again!</p>
+    <p id="last">Goobye Again!</p>
+
+    <script type="text/javascript">
+        var selection1 = document.getElementById("first");
+        var selection2 = document.getElementsByClassName("special")[0];
+        var selection3 = document.querySelector(".special");
+        var selection4 = document.querySelectorAll("#first")[0];
+    </script>
+</body>
+</html>

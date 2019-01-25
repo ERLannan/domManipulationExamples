@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Selectors</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h1>Good bye</h1>
+
+    <ul>
+      <li id="highlight">List Item 1</li>
+      <li class="bolded">List Item 2</li>
+      <li class="bolded">List Item 3</li>
+    </ul>
+
+    <button>Click Me</button>
+
+    <script type="text/javascript">
+      // common methods for selecting objects in the DOM
+      console.log("document.getElementById(\"highlight\")");
+      var itemByID = document.getElementById("highlight");
+      listItems(itemByID);
+
+      console.log(" ");
+      console.log("document.getElementsByClassName(\"bolded\")");
+      var itemByClass = document.getElementsByClassName("bolded");
+      listItems(itemByClass)
+    
+      console.log(" ");
+      console.log("document.getElementsByTagName(\"h1\")");
+      var itemsByTag = document.getElementsByTagName("h1");
+      listItems(itemsByTag);
+
+      console.log(" ");
+      console.log("document.querySelector() using h1 #highlight .bolded");
+      var itemQuerySelector1 = document.querySelector("h1");
+      listItems(itemQuerySelector1);
+      var itemQuerySelector2 = document.querySelector("#highlight");
+      listItems(itemQuerySelector2);
+      var itemQuerySelector3 = document.querySelector(".bolded");
+      listItems(itemQuerySelector3);
+      
+      console.log(" ");
+      console.log("document.querySelectorAll() using h1 #highlight .bolded");
+      var itemQuerySelectorAll1 = document.querySelectorAll("h1");
+      listItems(itemQuerySelectorAll1);
+      var itemQuerySelectorAll2 = document.querySelectorAll("#highlight");
+      listItems(itemQuerySelectorAll2);
+      var itemQuerySelectorAll3 = document.querySelectorAll(".bolded");
+      listItems(itemQuerySelectorAll3);
+      //console.log(itemQuerySelectorAll);
+
+      function listItems(arr) {
+        if(arr.length>0) {
+          for(var i = 0; i < arr.length; i++) {
+              console.log(arr[i]);
+          };
+        } else {
+          console.log(arr);
+        }
+        console.log("-----------");
+      }
+      
+      document.querySelector("button").addEventListener("click", function(){
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        document.body.style.backgroundColor = rgb(r, g, b);
+      });
+
+      function rgb(r, g, b){
+        r = Math.floor(r);
+        g = Math.floor(g);
+        b = Math.floor(b);
+        return ["rgb(",r,",",g,",",b,")"].join("");
+      }
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+.green {
+    color: green;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.5;
+}
